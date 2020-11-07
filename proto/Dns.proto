@@ -1,0 +1,115 @@
+
+    syntax="proto2";
+
+    option java_outer_classname="Dns";
+    option java_package="com.sas.cyber.common.proto";
+
+    message DnsMsg {
+      
+   optional  string recordId = 1 ; // a unique identifier that is associated with each DNS event record
+
+   optional  int64 timestamp = 2 ; // an integer that represents the date and time (in milliseconds) at which IngestServer received the DNS record
+
+   optional  string feedId = 3 ; // a constant in every row that identifies the record type
+
+   optional  int64 startTime = 4 ; // the date and time at which the DNS event started
+
+   optional  string srcIpAddress = 5 ; // the source IPv4 or IPv6 address that is associated with the DNS event
+
+   optional  string dnsServerIpAddress = 6 ; // the IP address of the DNS server
+
+   optional  int32 dnsServerPort = 7 ; // the DNS server port
+
+   optional  string dnsQuery = 8 ; // the DNS query
+
+   optional  string dnsServerAction = 9 ; // the action that is taken by the DNS server
+
+   optional  int32 dnsEventID = 10 ; // the Microsoft event identification that is associated with the DNS request
+
+   optional  string eventStr = 11 ; // the Microsoft event status that is associated with the DNS request
+
+   optional  string flags = 12 ; // the query header flag that is associated with the DNS query request
+
+   optional  string packetData = 13 ; // the hexadecimal representation of the DNS event
+
+   optional  string policyName = 14 ; // the policy name that is associated with naming the host
+
+   optional  int32 queryTypeId = 15 ; // the type of query that is associated with the DNS request
+
+   optional  string queryTypeStr = 16 ; // the type of query as a string that is associated with the DNS request
+
+   optional  int32 rcode = 17 ; // the response code that is associated with the DNS request
+
+   optional  string rcodeStr = 18 ; // a short description of the response code that is associated with the DNS request
+
+   optional  string reason = 19 ; // the long description of the response code that is associated with the DNS request
+
+   optional  int32 flagAA = 20 ; // an integer (typically a Boolean) that represents whether the DNS event is an authoritative response
+
+   optional  int32 flagAD = 21 ; // an integer (typically a Boolean) that represents whether the DNS event contains authenticated data
+
+   optional  int32 flagR = 22 ; // an integer (typically a Boolean) that represents whether the DNS event is a response from the DNS server
+
+   optional  int32 flagRD = 23 ; // an integer (typically a Boolean) that represents whether the DNS event requested recursion
+
+   optional  string scope = 24 ; // a unique version of a zone that can be created inside an existing zone
+
+   optional  string zone = 25 ; // the distinct, contiguous portion of the domain namespace that is associated with the response
+
+   optional  string vendorName = 26 ; // the name of the vendor that is associated with the DNS event
+
+   optional  string productVersion = 27 ; // the version of the product that is associated with the DNS event
+
+   optional  string srcIPUserId = 1000 ; // the unique identifier of the user that is associated with this event
+
+   optional  string srcIPDivision = 1001 ; // the division of the user that is associated with this event
+
+   optional  string srcIPDepartment = 1002 ; // the department of the user that is associated with this event
+
+   optional  string srcIPPeerGroup = 1003 ; // the assigned peer group of the user that is associated with the device
+
+   optional  int32 srcIPHVE = 1004 ; // the high-value entity value that is associated with the device
+
+   optional  string srcIPBizProc = 1005 ; // the business process that is associated with the device
+
+   optional  string srcNWSiteCode = 1006 ; // the site code that is associated with the source IP address
+
+   optional  string srcNWCountry = 1007 ; // the name of the country that is associated with the source IP address
+
+   optional  string srcNWRegion = 1008 ; // the region that is associated with the source IP address
+
+   optional  string srcNWCity = 1009 ; // the city that is associated with the source IP address
+
+   optional  double srcNWLatitude = 1010 ; // the latitude that is associated with the source IP address
+
+   optional  double srcNWLongitude = 1011 ; // the longitude that is associated with the source IP address
+
+   optional  int32 srcNWTzOffset = 1012 ; // the time zone offset that is associated with the source IP address
+
+   optional  string srcNWName = 1013 ; // the network name that is associated with the source IP address
+
+   optional  string srcNWType = 1014 ; // the network type that is associated with the source IP address
+
+   optional  int32 srcNWScope = 1015 ; // an integer that indicates whether network information could be associated with the source IP address
+
+   optional  string peerGroup = 1016 ; // the assigned peer group of the user that is associated with this event
+
+   optional  string userPeerGroup = 1017 ; // the assigned peer group of the user that is associated with the source IP address
+
+   optional  int32 userHVE = 1018 ; // the high-value entity value for the user that is associated with the source IP address
+
+   optional  string userBizProc = 1019 ; // the business process for the user that is associated with the source IP address
+
+   optional  int32 isUserDevice = 1020 ; // a flag that indicates whether the device is a user device
+
+   optional  string userFName = 1021 ; // the first name of the user that is associated with this event
+
+   optional  string userLName = 1022 ; // the last name of the user that is associated with this event
+
+   optional  string userCity = 1023 ; // the city of the user that is associated with this event
+
+   optional  string userRegion = 1024 ; // the region of the user that is associated with this event
+
+   optional  string userCountry = 1025 ; // the country of the user that is associated with this event
+
+    }

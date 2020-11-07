@@ -1,0 +1,60 @@
+FROM golang:1.15 AS talongo2
+
+RUN echo "GOPATH is: '${GOPATH}'"
+
+RUN mkdir -p ${GOPATH}/src/github.com/EdSwArchitect 
+
+RUN uname -a
+
+RUN which go
+
+RUN echo "GOPATH is: '${GOPATH}'"
+
+RUN ls -l $GOPATH
+
+
+RUN mkdir -p /go/src/github.com/EdSwArchitect/talon-kafka/talon
+
+WORKDIR /go/src
+
+RUN apt-get update -y
+
+RUN apt-get install -y autoconf libtool
+
+RUN     git clone https://github.com/protocolbuffers/protobuf.git && \
+    cd protobuf && \
+    git submodule update --init --recursive && \
+    ./autogen.sh && \
+     ./configure && \
+     make -j 4 && \
+     make install && \
+     ldconfig 
+
+RUN find / -name protoc-gen-go -print
+
+RUN find / -name protobuf -print
+
+RUN ls -l ${GOPATH}/bin
+
+RUN go get google.golang.org/protobuf/cmd/protoc-gen-go \
+         google.golang.org/grpc/cmd/protoc-gen-go-grpc
+
+RUN go get github.com/Shopify/sarama
+RUN go install google.golang.org/protobuf/cmd/protoc-gen-go
+RUN go get github.com/prometheus/client_golang/prometheus
+RUN go get github.com/prometheus/client_golang/prometheus/promauto
+RUN go get github.com/prometheus/client_golang/prometheus/promhttp
+
+WORKDIR /go/src/github.com/EdSwArchitect/new-kafka
+
+COPY main.go ./
+COPY proto proto/
+
+RUN mkdir talon && \
+   protoc -I=proto --go_out=talon   ./proto/*.proto
+
+RUN go build
+
+#RUN /go/src/github.com/EdSwArchitect/new-kafka/new-kafka -brokers sprinter200.local:9092 -topics sas.cyber.NetflowParsed -group edtest
+
+ENTRYPOINT [ "/go/src/github.com/EdSwArchitect/new-kafka/new-kafka", "-brokers", "sprinter200.local:9092", "-topics", "sas.cyber.NetflowParsed", "-group", "edtest" ]

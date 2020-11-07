@@ -1,0 +1,207 @@
+
+    syntax="proto2";
+
+    option java_outer_classname="NetflowEventDetails";
+    option java_package="com.sas.cyber.common.proto";
+
+    message NetflowEventDetailsMsg {
+      
+   optional  string recordId = 1 ; // a unique identifier that is associated with each NetFlow event record
+
+   optional  int64 timestamp = 2 ; // an integer that represents the date and time in milliseconds (UNIX epoch time) at which IngestServer received the NetFlow packet
+
+   optional  string feedId = 3 ; // a constant in every row that identifies the record type
+
+   optional  string fwdIpAddress = 4 ; // the IPv4 address of the router or switch that exports NetFlow packets
+
+   optional  int32 version = 5 ; // the version of NetFlow that is exported
+
+   optional  int32 numFlows = 6 ; // the number of data records that are associated with the NetFlow record
+
+   optional  int64 flowSequence = 7 ; // a sequential number that is associated with each NetFlow packet exported from an individual router or switch. This number is a validation that the collector (IngestServer) is not dropping NetFlow packets.
+
+   optional  int64 startTime = 8 ; // the date and time at which an individual NetFlow record started
+
+   optional  int32 duration = 9 ; // the total time of communication between the source IP address and the destination IP address for the NetFlow record
+
+   optional  string srcIpAddress = 10 ; // the source IPv4 or IPv6 address that is associated with the NetFlow event
+
+   optional  int32 srcPort = 11 ; // the communication port that is associated with the source IP address
+
+   optional  string dstIpAddress = 12 ; // the destination IPv4 or IPv6 address that is associated with the NetFlow event
+
+   optional  int32 dstPort = 13 ; // the communication port that is associated with the destination IP address
+
+   optional  int32 protocol = 14 ; // the IP protocol type that is associated with the summarized data exchange. The value can be 0-255 and follows the specification defined by IANA.org
+
+   optional  int64 inBytes = 15 ; // the total bytes that are transferred from the source IP address to the destination IP address for the NetFlow record
+
+   optional  int64 inPackets = 16 ; // the total packets that are transferred from the source IP address to the destination IP address for the NetFlow record
+
+   optional  string nextHopAddress = 17 ; // the associated version format of NetFlow
+
+   optional  int32 tcpFlags = 18 ; // a numerical value for the cumulative Ord TCP flags that are observed in the NetFlow record
+
+   optional  int32 srcASN = 19 ; // the source BGP autonomous system number
+
+   optional  int32 dstASN = 20 ; // the destination BGP autonomous system number
+
+   optional  int32 srcMask = 21 ; // the number of contiguous bits in the source address subnet mask, that is, the submask in slash notation
+
+   optional  int32 dstMask = 22 ; // the number of contiguous bits in the destination address subnet mask, that is, the submask in slash notation
+
+   optional  int32 icmpFlags = 23 ; // the cumulative number of ICMP flags that are observed in the NetFlow record
+
+   optional  int64 srcIpNum = 24 ; // an integer that represents the source IP address
+
+   optional  int64 dstIpNum = 25 ; // an integer that represents the destination IP address
+
+   optional  double srcTFScore = 1000 ; // the risk score of the source IP address that is associated with the threat feed correlation
+
+   optional  double srcTFLatitude = 1001 ; // the latitude of the source IP address that is associated with the threat feed correlation
+
+   optional  double srcTFLongitude = 1002 ; // the longitude of the source IP address that is associated with the threat feed correlation
+
+   optional  string srcTFCountry = 1003 ; // the country of the source IP address that is associated with the threat feed correlation
+
+   optional  string srcTFProtocol = 1004 ; // the protocol of the threat feed correlation that is associated with the source IP address
+
+   optional  string srcTFCategory = 1005 ; // the category of the threat feed correlation that is associated with the source IP address
+
+   optional  int32 srcTFHit = 1006 ; // an integer that indicated whether a threat feed is associated with the destination IP address
+
+   optional  double dstTFScore = 1007 ; // the risk score of the destination IP address that is associated with the threat feed correlation
+
+   optional  double dstTFLatitude = 1008 ; // the latitude of the destination IP address that is associated with the threat feed correlation
+
+   optional  double dstTFLongitude = 1009 ; // the longitude of the destination IP address that is associated with the threat feed correlation
+
+   optional  string dstTFCountry = 1010 ; // the country of the destination IP address that is associated with the threat feed correlation
+
+   optional  string dstTFProtocol = 1011 ; // the protocol of the threat feed correlation that is associated with the destination IP address
+
+   optional  string dstTFCategory = 1012 ; // the category of the threat feed correlation that is associated with the destination IP address
+
+   optional  int32 dstTFHit = 1013 ; // an integer that indicates whether a threat feed is associated with the destination IP address
+
+   optional  string srcNWSiteCode = 1014 ; // the site code that is associated with the source IP address
+
+   optional  string srcNWCountry = 1015 ; // the name of the country that is associated with the source IP address
+
+   optional  string srcNWRegion = 1016 ; // the region that is associated with the source IP address
+
+   optional  string srcNWCity = 1017 ; // the city that is associated with the source IP address
+
+   optional  double srcNWLatitude = 1018 ; // the latitude that is associated with the source IP address
+
+   optional  double srcNWLongitude = 1019 ; // the longitude that is associated with the source IP address
+
+   optional  int32 srcNWTzOffset = 1020 ; // the time zone offset that is associated with the source IP address
+
+   optional  string srcNWName = 1021 ; // the network name that is associated with the source IP address
+
+   optional  string srcNWType = 1022 ; // the network type that is associated with the source IP address
+
+   optional  int32 srcNWScope = 1023 ; // an integer that indicates whether network information could be associated with the source IP address
+
+   optional  string dstNWSiteCode = 1024 ; // the site code that is associated with the destination IP address
+
+   optional  string dstNWCountry = 1025 ; // the name of the country that is associated with the destination IP address
+
+   optional  string dstNWRegion = 1026 ; // the region that is associated with the destination IP address
+
+   optional  string dstNWCity = 1027 ; // the city that is associated with the destination IP address
+
+   optional  double dstNWLatitude = 1028 ; // the latitude that is associated with the destination IP address
+
+   optional  double dstNWLongitude = 1029 ; // the longitude that is associated with the destination IP address
+
+   optional  int32 dstNWTzOffset = 1030 ; // the time zone offset that is associated with the destination IP address
+
+   optional  string dstNWName = 1031 ; // the network name that is associated with the destination IP address
+
+   optional  string dstNWType = 1032 ; // the network type that is associated with the destination IP address
+
+   optional  int32 dstNWScope = 1033 ; // an integer that indicates whether network information could be associated with the destination IP address
+
+   optional  string srcDNHostname = 1034 ; // the host name that is associated with the source IP address
+
+   optional  string dstDNHostname = 1035 ; // the host name that is associated with the destination IP address
+
+   optional  string srcDHMacAddress = 1036 ; // the media access control address that is associated with the source IP address
+
+   optional  string dstDHMacAddress = 1037 ; // the media access control address that is associated with the destination IP address
+
+   optional  string srcIPUserId = 1038 ; // the unique identifier of the user that is associated with this event
+
+   optional  string srcIPDivision = 1039 ; // the division of the user that is associated with this event
+
+   optional  string srcIPDepartment = 1040 ; // the department of the user that is associated with this event
+
+   optional  string srcIPPeerGroup = 1041 ; // the assigned peer group of the user that is associated with the device
+
+   optional  int32 srcIPHVE = 1042 ; // the high-value entity value that is associated with the device
+
+   optional  string srcIPBizProc = 1043 ; // the business process that is associated with the device
+
+   optional  string srcIPUserPeerGroup = 1044 ; // the assigned peer group of the user that is associated with the source IP address
+
+   optional  string srcIPDevicePeerGroup = 1045 ; // the peer group that is associated with the source IP address
+
+   optional  int32 srcIPUserHVE = 1046 ; // the high-value entity value of the user that is associated with the source IP address
+
+   optional  string srcIPUserBizProc = 1047 ; // the business process for the user that is associated with the source IP address
+
+   optional  string srcIPUserFName = 1048 ; // the first name of the user that is associated with the source IP address
+
+   optional  string srcIPUserLName = 1049 ; // the last name of the user that is associated with the source IP address
+
+   optional  string srcIPUserCity = 1050 ; // the city of the user that is associated with the source IP address
+
+   optional  string srcIPUserRegion = 1051 ; // the region of the user that is associated with the source IP address
+
+   optional  string srcIPUserCountry = 1052 ; // the country of the user that is associated with the source IP address
+
+   optional  int32 srcIPIsUserDevice = 1053 ; // a flag that indicates whether the device that is associated with the source IP address is a user device
+
+   optional  string dstIPUserId = 1054 ; // the user ID that is associated with the destination IP address
+
+   optional  string dstIPDivision = 1055 ; // the division that is associated with the destination IP address
+
+   optional  string dstIPDepartment = 1056 ; // the department that is associated with the destination IP address
+
+   optional  string dstIPPeerGroup = 1057 ; // the peer group that is associated with the destination end of the event
+
+   optional  string dstIPUserPeerGroup = 1058 ; // the assigned peer group of the user that is associated with the destination IP address
+
+   optional  string dstIPDevicePeerGroup = 1059 ; // the peer group that is associated with the destination IP address
+
+   optional  int32 dstIPHVE = 1060 ; // the high-value entity value that is associated with the destination IP address
+
+   optional  int32 dstIPUserHVE = 1061 ; // the high-value entity value of the user that is associated with the destination IP address
+
+   optional  string dstIPBizProc = 1062 ; // the business process that is associated with the destination IP address
+
+   optional  string dstIPUserBizProc = 1063 ; // the business process of the user that is associated with the destination IP address
+
+   optional  string dstIPUserFName = 1064 ; // the first name of the user that is associated with the destination IP address
+
+   optional  string dstIPUserLName = 1065 ; // the last name of the user that is associated with the destination IP address
+
+   optional  string dstIPUserCity = 1066 ; // the city of the user that is associated with the destination IP address
+
+   optional  string dstIPUserRegion = 1067 ; // the region of the user that is associated with the destination IP address
+
+   optional  string dstIPUserCountry = 1068 ; // the country of the user that is associated with the destination IP address
+
+   optional  int32 dstIPIsUserDevice = 1069 ; // a flag that indicates whether the device of the user that is associated with the destination IP address is a user device
+
+   optional  string srcIPDeviceType = 1070 ; // the device type that is associated with the source IP address
+
+   optional  string dstIPDeviceType = 1071 ; // the device type that is associated with the destination IP address
+
+   optional  string eventId = 2000 ; // the analytic event identifier
+
+   optional  int32 anomalousFlag = 2001 ; // an indicator of an anomamlous event
+
+    }

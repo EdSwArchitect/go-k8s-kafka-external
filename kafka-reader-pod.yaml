@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kafka-reader-pod
+  labels:
+    app: kafka-reader
+spec:
+  containers:
+  - name: kafka-reader
+    image: edswarchitect/mynetflow
+    args:
+      - "-brokers"
+      - "kafka-external-svc:9092"
+      - "-topics"
+      - "NetflowParsed"
+      - "-group"
+      - "edtest"
+      - "-verbose=true"
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: 8888
+

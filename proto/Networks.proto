@@ -1,0 +1,51 @@
+
+    syntax="proto2";
+
+    option java_outer_classname="Networks";
+    option java_package="com.sas.cyber.common.proto";
+
+    message NetworksMsg {
+      
+   optional  string networkId = 1 ; // the network primary key that is associated with the IP address location, which is used to link a device to a network in a database
+
+   optional  string range = 2 ; // the network CIDR range
+
+   optional  string siteCode = 3 ; // the site code that is associated with the network
+
+   optional  string country = 4 ; // the name of the country that is associated with the network
+
+   optional  string region = 5 ; // the region that is associated with the network
+
+   optional  string city = 6 ; // the city that is associated with the network
+
+   optional  double latitude = 7 ; // the latitude that is associated with the network
+
+   optional  double longitude = 8 ; // the longitude that is associated with the network
+
+   optional  int32 tzOffset = 9 ; // the time zone offset for the network
+
+   optional  string name = 10 ; // the name of the network
+
+   optional  string type = 11 ; // the type of the network
+
+   optional  int64 low = 12 ; // the low end of the IP address range as an unsigned integer
+
+   optional  int64 high = 13 ; // the high end of the IP address range as an unsigned integer
+
+   optional  string os = 14 ; // the device operating system
+
+   optional  string peerGroup = 15 ; // the assigned peer group of the user that is associated with the device activity event
+
+   optional  string deviceType = 16 ; // the device type that is associated with the device activity event
+
+   optional  int32 HVE = 17 ; // the high-value entity value that is associated with the user
+
+   optional  string bizProc = 18 ; // the business process that is associated with the user
+
+   optional  int32 isUserDevice = 19 ; // a flag that indicates whether the device is a user device
+
+   optional  int32 isIOT = 20 ; // a flag that indicates whether the device is an IOT device
+
+   optional  int32 isManaged = 21 ; // a flag that indicates whether the device is a managed device
+
+    }

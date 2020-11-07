@@ -1,0 +1,16 @@
+
+    syntax="proto2";
+
+    option java_outer_classname="IpMac";
+    option java_package="com.sas.cyber.common.proto";
+    option go_package=".;talon";
+
+    message IpMacMsg {
+      
+   optional  string ipAddress = 1 ; // device IP address
+
+   optional  string macAddress = 2 ; // device MAC address
+
+   optional  int64 timestamp = 3 ; // the timestamp of the ipAddress and macAddress association
+
+    }

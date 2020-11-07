@@ -1,0 +1,23 @@
+
+    syntax="proto2";
+
+    option java_outer_classname="ThreatFeed";
+    option java_package="com.sas.cyber.common.proto";
+
+    message ThreatFeedMsg {
+      
+   optional  string ipAddress = 1 ; // the IP address of the device that is associated with a threat feed correlation
+
+   optional  double score = 2 ; // the risk score of the IP address that is associated with the threat feed correlation
+
+   optional  double latitude = 3 ; // the latitude of the IP address that is associated with the threat feed correlation
+
+   optional  double longitude = 4 ; // the longitude of the IP address that is associated with the threat feed correlation
+
+   optional  string country = 5 ; // the country of the IP address that is associated with the threat feed correlation
+
+   optional  string protocol = 6 ; // the protocol of the threat feed correlation that is associated with the IP address
+
+   optional  string category = 7 ; // the category of the threat feed correlation that is associated with the IP address
+
+    }

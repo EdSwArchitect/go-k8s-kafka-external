@@ -1,0 +1,15 @@
+
+    syntax="proto2";
+
+    option java_outer_classname="IpHost";
+    option java_package="com.sas.cyber.common.proto";
+
+    message IpHostMsg {
+      
+   optional  string ipAddress = 1 ; // the IP address for the device
+
+   optional  string hostname = 2 ; // the host name for the device
+
+   optional  int64 timestamp = 3 ; // the timestamp of the ipAddress and hostname association
+
+    }

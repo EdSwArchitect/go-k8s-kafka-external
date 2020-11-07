@@ -1,0 +1,95 @@
+
+    syntax="proto2";
+
+    option java_outer_classname="DeviceActivity";
+    option java_package="com.sas.cyber.common.proto";
+
+    message DeviceActivityMsg {
+      
+   optional  string recordId = 1 ; // a unique identifier that is associated with each event
+
+   optional  string ipAddress = 2 ; // the IPv4 address that is associated with the event
+
+   optional  int64 ipNum = 3 ; // an integer that represents the IP address
+
+   optional  string hostname = 4 ; // the host name that is associated with the event
+
+   optional  string macAddress = 5 ; // the media access control address that is associated with the device
+
+   optional  string os = 6 ; // the operating system that is associated with the device
+
+   optional  int64 startTime = 7 ; // the date and time at which an event started
+
+   optional  int32 port = 8 ; // the communication port that is associated with the IP address
+
+   optional  int32 oport = 9 ; // the communication port that is associated with the opposite end of the communication
+
+   optional  int32 protocol = 10 ; // the IP protocol type that is associated with the summarized data exchange. The value can be 0-255 and follows the specification defined by IANA.org
+
+   optional  int32 tcpFlags = 11 ; // a numerical value for the cumulative Ord TCP flags that are observed in the network record
+
+   optional  int32 isSrc = 12 ; // an integer that identifies whether the record is a source record (as opposed to a destination record)
+
+   optional  string feedId = 13 ; // an identifier for the schema
+
+   optional  string networkId = 14 ; // the network primary key that is associated with the IP address location, which is used to link a device to the network in the database
+
+   optional  string networkName = 15 ; // the name of the network
+
+   optional  string networkType = 16 ; // the type of the network
+
+   optional  int32 networkScope = 17 ; // an integer that represents the network scope
+
+   optional  string siteCode = 18 ; // the site code that is associated with the network
+
+   optional  string country = 19 ; // the name of the country that is associated with the network
+
+   optional  string region = 20 ; // the region that is associated with the network
+
+   optional  string city = 21 ; // the city that is associated with the network
+
+   optional  double latitude = 22 ; // the latitude that is associated with the network
+
+   optional  double longitude = 23 ; // the longitude that is associated with the network
+
+   optional  int32 tzOffset = 24 ; // the time zone offset for the network
+
+   optional  string peerGroup = 25 ; // the assigned peer group of the user that is associated with the device activity event
+
+   optional  string deviceType = 26 ; // the device type that is associated with the device activity event
+
+   optional  int32 HVE = 27 ; // the high-value entity value that is associated with the device
+
+   optional  string bizProc = 28 ; // the business process that is associated with the device
+
+   optional  int32 isUserDevice = 29 ; // a flag that indicates whether the device is a user device
+
+   optional  int32 isIOT = 30 ; // a flag that indicates whether the device is an IOT device
+
+   optional  int32 isManaged = 31 ; // a flag that indicates whether the device is a managed device
+
+   optional  string userId = 32 ; // the unique identifier of the user that is associated with the device activity event
+
+   optional  string email = 33 ; // the email address of the user that is associated with the device activity event
+
+   optional  string lname = 34 ; // the last name of the user that is associated with the device activity event
+
+   optional  string fname = 35 ; // the first name of the user that is associated with the device activity event
+
+   optional  string division = 36 ; // the division of the user that is associated with the device activity event
+
+   optional  string department = 37 ; // the department of the user that is associated with the device activity event
+
+   optional  string userCity = 38 ; // the city of the user that is associated with the device activity event
+
+   optional  string userRegion = 39 ; // the region of the user that is associated with the device activity event
+
+   optional  string userCountry = 40 ; // the country of the user that is associated with the device activity event
+
+   optional  string userPeerGroup = 41 ; // the assigned peer group of the user that is associated with the device activity event
+
+   optional  int32 userHVE = 42 ; // the high-value entity value for the user that is associated with the device activity event
+
+   optional  string userBizProc = 43 ; // the business process for the user that is associated with the device activity event
+
+    }

@@ -1,0 +1,33 @@
+
+    syntax="proto2";
+
+    option java_outer_classname="User";
+    option java_package="com.sas.cyber.common.proto";
+
+    message UserMsg {
+      
+   optional  string userId = 1 ; // the unique identifier of the user
+
+   optional  string email = 2 ; // the email address of the user
+
+   optional  string lname = 3 ; // the last name of the user
+
+   optional  string fname = 4 ; // the first name of the user
+
+   optional  string division = 5 ; // the division that is associated with the user
+
+   optional  string department = 6 ; // the department that is associated with the user
+
+   optional  string city = 7 ; // the city that is associated with the user
+
+   optional  string region = 8 ; // the region that is associated with the user
+
+   optional  string country = 9 ; // the country that is associated with the user
+
+   optional  string peerGroup = 10 ; // the assigned peer group that is associated with the user
+
+   optional  int32 HVE = 11 ; // the high-value entity value that is associated with the user
+
+   optional  string bizProc = 12 ; // the business process that is associated with the user
+
+    }

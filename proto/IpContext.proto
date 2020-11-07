@@ -1,0 +1,75 @@
+
+    syntax="proto2";
+
+    option java_outer_classname="IpContext";
+    option java_package="com.sas.cyber.common.proto";
+
+    message IpContextMsg {
+      
+   optional  string ipAddress = 1 ; // the IPv4 address of the event
+
+   optional  int64 ipNum = 2 ; // an integer that represents the IP address
+
+   optional  int64 timestamp = 3 ; // the record timestamp
+
+   optional  string hostname = 4 ; // the host name
+
+   optional  string macAddress = 5 ; // the media access control address
+
+   optional  string siteCode = 6 ; // the site code that is associated with the network
+
+   optional  string country = 7 ; // the name of the country that is associated with the network
+
+   optional  string region = 8 ; // the region that is associated with the network
+
+   optional  string city = 9 ; // the city that is associated with the network
+
+   optional  double latitude = 10 ; // the latitude that is associated with the network
+
+   optional  double longitude = 11 ; // the longitude that is associated with the network
+
+   optional  int32 tzOffset = 12 ; // the time zone offset of the network
+
+   optional  string networkName = 13 ; // the name of the network
+
+   optional  string networkType = 14 ; // the type of the network
+
+   optional  int32 networkScope = 15 ; // the network scope
+
+   optional  string peerGroup = 16 ; // the assigned peer group that is associated with the authentication event
+
+   optional  string deviceType = 17 ; // the device type that is associated with the authentication event
+
+   optional  string devicePeerGroup = 18 ; // the assigned peer group that is associated with the device
+
+   optional  int32 isUserDevice = 19 ; // a flag that indicates whether the device is a user device
+
+   optional  int32 HVE = 20 ; // the high-value entity value that is associated with the device
+
+   optional  string bizProc = 21 ; // the business process that is associated with the device
+
+   optional  string userId = 22 ; // the unique identifier of the user that is associated with the authentication event
+
+   optional  string email = 23 ; // the email address of the user that is associated with the authentication event
+
+   optional  string lname = 24 ; // the last name of the user that is associated with the authentication event
+
+   optional  string fname = 25 ; // the first name of the user that is associated with the authentication event
+
+   optional  string division = 26 ; // the division of the user that is associated with the authentication event
+
+   optional  string department = 27 ; // the department of the user that is associated with the authentication event
+
+   optional  string userCity = 28 ; // the city of the user that is associated with the authentication event
+
+   optional  string userRegion = 29 ; // the region of the user that is associated with the authentication event
+
+   optional  string userCountry = 30 ; // the country of the user that is associated with the authentication event
+
+   optional  string userPeerGroup = 31 ; // the assigned peer group of the user that is associated with the authentication event
+
+   optional  int32 userHVE = 32 ; // the high-value entity value that is associated with the user
+
+   optional  string userBizProc = 33 ; // the business process that is associated with the user
+
+    }

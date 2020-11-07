@@ -1,0 +1,87 @@
+
+    syntax="proto2";
+
+    option java_outer_classname="Auth";
+    option java_package="com.sas.cyber.common.proto";
+
+    message AuthMsg {
+      
+   optional  string recordId = 1 ; // a unique identifier that is associated with each authentication event record
+
+   optional  int64 timestamp = 2 ; // an integer that represents the date and time (in milliseconds) at which IngestServer received the authentication record
+
+   optional  string feedId = 3 ; // a constant in every row that identifies the record type
+
+   optional  int64 startTime = 4 ; // the date and time (in milliseconds) at which the authentication event started
+
+   optional  string userId = 5 ; // the unique identifier of the user that is associated with the authentication event
+
+   optional  string srcHostname = 6 ; // the host name of the device from which the user is authenticating
+
+   optional  string srcIpAddress = 7 ; // the IP address of the device from which the user is authenticating
+
+   optional  string dcHostname = 8 ; // the host name of the server or domain controller of the user that is performing authentication
+
+   optional  string dcIpAddress = 9 ; // the host name of the server or domain controller of the user that is performing authentication
+
+   optional  int32 status = 10 ; // an integer that represents the status of the authentication attempt, where 0 indicates a successful authentication
+
+   optional  string failedReason = 11 ; // the reason that is associated with a failed authentication attempt
+
+   optional  string domain = 12 ; // the authentication domain
+
+   optional  string email = 1000 ; // the email address of the user that is associated with the authentication event
+
+   optional  string lname = 1001 ; // the first name of the user that is associated with the authentication event
+
+   optional  string fname = 1002 ; // the last name of the user that is associated with the authentication event
+
+   optional  string division = 1003 ; // the division of the user that is associated with the authentication event
+
+   optional  string department = 1004 ; // the department of the user that is associated with the authentication event
+
+   optional  string city = 1005 ; // the city of the user that is associated with the authentication event
+
+   optional  string region = 1006 ; // the region of the user that is associated with the authentication event
+
+   optional  string country = 1007 ; // the country of the user that is associated with the authentication event
+
+   optional  string peerGroup = 1008 ; // the assigned peer group of the user that is associated with this event
+
+   optional  string srcIPPeerGroup = 1009 ; // the assigned peer group of the device that is associated with the authentication event
+
+   optional  string deviceType = 1010 ; // the device type that is associated with the authentication event
+
+   optional  int32 HVE = 1011 ; // the high-value entity value that is associated with the device
+
+   optional  string bizProc = 1012 ; // the business process that is associated with the device
+
+   optional  string srcNWSiteCode = 1013 ; // the site code that is associated with the source IP address
+
+   optional  string srcNWCountry = 1014 ; // the name of the country that is associated with the source IP address
+
+   optional  string srcNWRegion = 1015 ; // the region that is associated with the source IP address
+
+   optional  string srcNWCity = 1016 ; // the city that is associated with the source IP address
+
+   optional  double srcNWLatitude = 1017 ; // the latitude that is associated with the source IP address
+
+   optional  double srcNWLongitude = 1018 ; // the longitude that is associated with the source IP address
+
+   optional  int32 srcNWTzOffset = 1019 ; // the time zone offset that is associated with the source IP address
+
+   optional  string srcNWName = 1020 ; // the network name that is associated with the source IP address
+
+   optional  string srcNWType = 1021 ; // the network type that is associated with the source IP address
+
+   optional  int32 srcNWScope = 1022 ; // an integer that indicates whether network information could be associated with the source IP address
+
+   optional  string userPeerGroup = 1023 ; // the assigned peer group of the user that is associated with the source IP address
+
+   optional  int32 userHVE = 1024 ; // the high-value entity value for the user that is associated with the source IP address
+
+   optional  string userBizProc = 1025 ; // the business process for the user that is associated with the source IP address
+
+   optional  int32 isUserDevice = 1026 ; // a flag that indicates whether the device is a user device
+
+    }

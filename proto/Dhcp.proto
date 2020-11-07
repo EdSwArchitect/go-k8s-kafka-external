@@ -1,0 +1,87 @@
+
+    syntax="proto2";
+
+    option java_outer_classname="Dhcp";
+    option java_package="com.sas.cyber.common.proto";
+
+    message DhcpMsg {
+      
+   optional  string recordId = 1 ; // a unique identifier that is associated with each DHCP event record
+
+   optional  int64 timestamp = 2 ; // an integer that represents the date and time (in milliseconds) at which IngestServer received the DHCP record
+
+   optional  string feedId = 3 ; // a constant in every row that identifies the record type
+
+   optional  int64 startTime = 4 ; // the date and time at which the DHCP event started
+
+   optional  string logServerHostname = 5 ; // the host name of the logging server
+
+   optional  int32 eventTypeId = 6 ; // an integer that represents the type of DHCP event that occurred
+
+   optional  string eventDescription = 7 ; // the short description of the type of DHCP event that occurred
+
+   optional  string srcIpAddress = 8 ; // the source IPv4 or IPv6 address that is associated with the DHCP event
+
+   optional  string macAddress = 9 ; // the media access control address that is associated with the DHCP event
+
+   optional  string srcHostname = 10 ; // the source host name that is associated with the DHCP event
+
+   optional  string userId = 11 ; // the unique identifier of the user that is associated with the DHCP event
+
+   optional  string vendorName = 12 ; // the name of the vendor that is associated with the DHCP event
+
+   optional  string productVersion = 13 ; // the version of the product that is associated with the DHCP event
+
+   optional  string srcIPUserId = 1000 ; // the unique identifier of the user that is associated with this event
+
+   optional  string srcIPDivision = 1001 ; // the division of the user that is associated with this event
+
+   optional  string srcIPDepartment = 1002 ; // the department of the user that is associated with this event
+
+   optional  string srcIPPeerGroup = 1003 ; // the assigned peer group of the user that is associated with the device
+
+   optional  int32 srcIPHVE = 1004 ; // the high-value entity value that is associated with the device
+
+   optional  string srcIPBizProc = 1005 ; // the business process that is associated with the device
+
+   optional  string srcNWSiteCode = 1006 ; // the site code that is associated with the source IP address
+
+   optional  string srcNWCountry = 1007 ; // the name of the country that is associated with the source IP address
+
+   optional  string srcNWRegion = 1008 ; // the region that is associated with the source IP address
+
+   optional  string srcNWCity = 1009 ; // the city that is associated with the source IP address
+
+   optional  double srcNWLatitude = 1010 ; // the latitude that is associated with the source IP address
+
+   optional  double srcNWLongitude = 1011 ; // the longitude that is associated with the source IP address
+
+   optional  int32 srcNWTzOffset = 1012 ; // the time zone offset that is associated with the source IP address
+
+   optional  string srcNWName = 1013 ; // the network name that is associated with the source IP address
+
+   optional  string srcNWType = 1014 ; // the network type that is associated with the source IP address
+
+   optional  int32 srcNWScope = 1015 ; // an integer that indicates whether network information could be associated with the source IP address
+
+   optional  string peerGroup = 1016 ; // the assigned peer group of the user that is associated with this event
+
+   optional  string userPeerGroup = 1017 ; // the assigned peer group of the user that is associated with the source IP address
+
+   optional  int32 userHVE = 1018 ; // the high-value entity value for the user that is associated with the source IP address
+
+   optional  string userBizProc = 1019 ; // the business process for the user that is associated with the source IP address
+
+   optional  int32 isUserDevice = 1020 ; // a flag that indicates whether the device is a user device
+
+   optional  string userFName = 1021 ; // the first name of the user that is associated with this event
+
+   optional  string userLName = 1022 ; // the last name of the user that is associated with this event
+
+   optional  string userCity = 1023 ; // the city of the user that is associated with this event
+
+   optional  string userRegion = 1024 ; // the region of the user that is associated with this event
+
+   optional  string userCountry = 1025 ; // the country of the user that is associated with this event
+
+    }

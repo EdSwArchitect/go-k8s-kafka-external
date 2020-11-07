@@ -1,0 +1,177 @@
+
+    syntax="proto2";
+
+    option java_outer_classname="Epp";
+    option java_package="com.sas.cyber.common.proto";
+
+    message EppMsg {
+      
+   optional  string recordId = 1 ; // a unique identifier that is associated with each endpoint protection event record
+
+   optional  int64 timestamp = 2 ; // an integer that represents the date and time (in milliseconds) at which IngestServer received the endpoint protection record
+
+   optional  string feedId = 3 ; // a constant in every row that identifies the record type
+
+   optional  int64 startTime = 4 ; // the date and time at which the endpoint protection event started
+
+   optional  int64 endTime = 5 ; // the date and time (in milliseconds) at which the endpoint protection event ended
+
+   optional  string srcIpAddress = 6 ; // the source IPv4 or IPv6 address that is associated with the endpoint protection event
+
+   optional  string srcMacAddress = 7 ; // the source media access control address that is associated with the endpoint protection event
+
+   optional  string srcHostname = 8 ; // the source host name that is associated with the endpoint protection event
+
+   optional  string srcDomain = 9 ; // the source domain that is associated with the endpoint protection event
+
+   optional  string dstIpAddress = 10 ; // the destination IPv4 or IPv6 address that is associated with the endpoint protection event
+
+   optional  string dstHostname = 11 ; // the destination host name that is associated with the endpoint protection event
+
+   optional  string userId = 12 ; // the unique identifier of the user that is associated with the endpoint protection event
+
+   optional  int32 srcPort = 13 ; // the communication port that is associated with the source IP address
+
+   optional  int32 dstPort = 14 ; // the communication port that is associated with the destination IP address
+
+   optional  int32 occurrences = 15 ; // the number of times an activity occurred for a given endpoint protection event
+
+   optional  string network = 16 ; // the label that represents a logical group of devices on the network. Defaults to 'N/A'
+
+   optional  int32 protocol = 17 ; // the IP protocol type that is associated with the summarized data exchange. The value follows the specification defined by IANA.org.
+
+   optional  string appPath = 18 ; // the directory path of the application that is associated with the endpoint protection event
+
+   optional  string appName = 19 ; // the application name that is associated with the endpoint protection event
+
+   optional  string appHash = 20 ; // the hash of the application that is associated with the endpoint protection event
+
+   optional  string appHashType = 21 ; // the type of hash that is applied
+
+   optional  string appCategory = 22 ; // the category of the application that is associated with the endpoint protection event
+
+   optional  string appType = 23 ; // the type of application that is associated with the endpoint protection event
+
+   optional  int32 appFileSize = 24 ; // the file size of the application that is associated with the endpoint protection event
+
+   optional  string parentAppPath = 25 ; // the directory path of the parent application that calls the application associated with the endpoint protection event
+
+   optional  string parentAppName = 26 ; // the name of the parent application that calls the application associated with the endpoint protection event
+
+   optional  string parentAppHash = 27 ; // the MD5 hash of the parent application that calls the application associated with the endpoint protection event
+
+   optional  string parentCategory = 28 ; // the category of the parent application that calls the application associated with the endpoint protection event
+
+   optional  string parentAppType = 29 ; // the type of the parent application that calls the application associated with the endpoint protection event
+
+   optional  int32 parentAppFileSize = 30 ; // the file size of the parent application that calls the application associated with the endpoint protection event
+
+   optional  int32 idsEventTypeId = 31 ; // the event type identification of the intrusion that is detected in the endpoint protection event
+
+   optional  string eventType = 32 ; // the type of event, such as host-based intrusion detection system (HIDS), antivirus (AVM), or a status message (Status), that is associated with the endpoint protection event
+
+   optional  string threatCategory = 33 ; // the threat category that is detected in the endpoint protection event
+
+   optional  string threatCategoryType = 34 ; // the type of threat category that is detected in the endpoint protection event
+
+   optional  string threatName = 35 ; // the name of the threat that is detected in the endpoint protection event
+
+   optional  string threatUrl = 36 ; // the URL of the threat that is detected in the endpoint protection event
+
+   optional  string threatPayloadUrl = 37 ; // the payload URL of the threat that is detected in the endpoint protection event
+
+   optional  string threatSigId = 38 ; // the signature identification of the threat that is detected in the endpoint protection event
+
+   optional  int32 threatSigSubId = 39 ; // the subsignature identification of the threat that is detected in the endpoint protection event
+
+   optional  string cve = 40 ; // the published vulnerability of the threat that is detected in the endpoint protection event
+
+   optional  string disposition = 41 ; // a conditional or contextual statement that is associated with detection of the endpoint protection event
+
+   optional  string downloadSite = 42 ; // the URL of the location where the threat was downloaded
+
+   optional  string downloadedBy = 43 ; // the user that downloaded the threat
+
+   optional  int32 severity = 44 ; // an integer that represents the severity of the endpoint protection event
+
+   optional  string requestedAction = 45 ; // the requested action that is associated with the threat or malware detected in the endpoint protection event
+
+   optional  string actualAction = 46 ; // the actual action that is performed in response to the threat or malware detected in the endpoint protection event
+
+   optional  string secondaryAction = 47 ; // the secondary action that is performed in response to the threat or malware detected in the endpoint protection event
+
+   optional  string statusMessage = 48 ; // the status of an operation that is associated with the endpoint protection event
+
+   optional  int32 statusType = 49 ; // the type of status that is associated with the endpoint protection event
+
+   optional  string vendorName = 50 ; // the name of the vendor that is associated with the endpoint protection event
+
+   optional  string vendorVersion = 51 ; // the version of the vendor product that is associated with the endpoint protection event
+
+   optional  string srcIPUserId = 1000 ; // the unique identifier of the user that is associated with this event
+
+   optional  string srcIPDivision = 1001 ; // the division of the user that is associated with this event
+
+   optional  string srcIPDepartment = 1002 ; // the department of the user that is associated with this event
+
+   optional  string srcIPPeerGroup = 1003 ; // the assigned peer group of the user that is associated with the device
+
+   optional  int32 srcIPHVE = 1004 ; // the high-value entity value that is associated with the device
+
+   optional  string srcIPBizProc = 1005 ; // the business process that is associated with the device
+
+   optional  string srcNWSiteCode = 1006 ; // the site code that is associated with the source IP address
+
+   optional  string srcNWCountry = 1007 ; // the name of the country that is associated with the source IP address
+
+   optional  string srcNWRegion = 1008 ; // the region that is associated with the source IP address
+
+   optional  string srcNWCity = 1009 ; // the city that is associated with the source IP address
+
+   optional  double srcNWLatitude = 1010 ; // the latitude that is associated with the source IP address
+
+   optional  double srcNWLongitude = 1011 ; // the longitude that is associated with the source IP address
+
+   optional  int32 srcNWTzOffset = 1012 ; // the time zone offset that is associated with the source IP address
+
+   optional  string srcNWName = 1013 ; // the network name that is associated with the source IP address
+
+   optional  string srcNWType = 1014 ; // the network type that is associated with the source IP address
+
+   optional  int32 srcNWScope = 1015 ; // an integer that indicates whether network information could be associated with the source IP address
+
+   optional  double dstTFScore = 1016 ; // the risk score of the destination IP address that is associated with the threat feed correlation
+
+   optional  double dstTFLatitude = 1017 ; // the latitude of the destination IP address that is associated with the threat feed correlation
+
+   optional  double dstTFLongitude = 1018 ; // the longitude of the destination IP address that is associated with the threat feed correlation
+
+   optional  string dstTFCountry = 1019 ; // the country of the destination IP address that is associated with the threat feed correlation
+
+   optional  string dstTFProtocol = 1020 ; // the protocol of the threat feed correlation that is associated with the destination IP address
+
+   optional  string dstTFCategory = 1021 ; // the category of the threat feed correlation that is associated with the destination IP address
+
+   optional  int32 dstTFHit = 1022 ; // an integer that indicates whether a threat feed is associated with the destination IP address
+
+   optional  string peerGroup = 1023 ; // the assigned peer group of the user that is associated with this event
+
+   optional  string userPeerGroup = 1024 ; // the assigned peer group of the user that is associated with the source IP address
+
+   optional  int32 userHVE = 1025 ; // the high-value entity value for the user that is associated with the source IP address
+
+   optional  string userBizProc = 1026 ; // the business process for the user that is associated with the source IP address
+
+   optional  int32 isUserDevice = 1027 ; // a flag that indicates whether the device is a user device
+
+   optional  string userFName = 1028 ; // the first name of the user that is associated with this event
+
+   optional  string userLName = 1029 ; // the last name of the user that is associated with this event
+
+   optional  string userCity = 1030 ; // the city of the user that is associated with this event
+
+   optional  string userRegion = 1031 ; // the region of the user that is associated with this event
+
+   optional  string userCountry = 1032 ; // the country of the user that is associated with this event
+
+    }

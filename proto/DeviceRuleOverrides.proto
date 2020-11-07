@@ -1,0 +1,33 @@
+
+    syntax="proto2";
+
+    option java_outer_classname="DeviceRuleOverrides";
+    option java_package="com.sas.cyber.common.proto";
+
+    message DeviceRuleOverridesMsg {
+      
+   optional  string ipAddress = 1 ; // the IPv4 address that is associated with the event
+
+   optional  int64 ipNum = 2 ; // an integer that represents the IP address
+
+   optional  string hostname = 3 ; // the host name that is associated with the event
+
+   optional  string macAddress = 4 ; // the media access control address that is associated with the device
+
+   optional  string os = 5 ; // the operating system that is associated with the device
+
+   optional  string peerGroup = 6 ; // the assigned peer group of the user that is associated with the device activity event
+
+   optional  string deviceType = 7 ; // the device type that is associated with the device activity event
+
+   optional  int32 HVE = 8 ; // the high-value entity value that is associated with the user
+
+   optional  string bizProc = 9 ; // the business process that is associated with the user
+
+   optional  int32 isUserDevice = 10 ; // a flag that indicates whether the device is a user device
+
+   optional  int32 isIOT = 11 ; // a flag that indicates whether the device is an IOT device
+
+   optional  int32 isManaged = 12 ; // a flag that indicates whether the device is a managed device
+
+    }
